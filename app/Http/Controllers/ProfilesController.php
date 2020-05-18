@@ -75,4 +75,11 @@ class ProfilesController extends Controller
 
         return redirect("/profile/{$user->id}");
     }
+
+    public function search()
+    {
+        
+        $users = User::where('id','!=',auth()->id())->get();
+        return view('profiles.search',compact('users'));
+    }
 }

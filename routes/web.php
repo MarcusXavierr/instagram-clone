@@ -21,6 +21,8 @@ Route::get('/email' , function (){
 
 Route::post('follow/{user}','FollowsController@store');
 
+Route::get('/search','ProfilesController@search');
+
 Route::get('/', 'PostsController@index');
 Route::get('/p/create' , 'PostsController@create');
 Route::get('/p/{post}' , 'PostsController@show');
