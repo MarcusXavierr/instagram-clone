@@ -19,6 +19,8 @@ Route::get('/email' , function (){
     return new NewUserWelcomeMail();
 });
 
+Route::post('/comments','CommentsController@store');
+
 Route::post('follow/{user}','FollowsController@store');
 
 Route::get('/search','ProfilesController@search');
