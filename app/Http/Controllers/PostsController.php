@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Post;
+use App\User;
+use App\Comments;
 
 class PostsController extends Controller
 {
@@ -50,6 +52,8 @@ class PostsController extends Controller
 
     public function show(\App\Post $post)
     {
-        return view('posts.show', compact('post'));
+        $users = User::all();
+        $comments = Comments::where('post_id','=',$post->id)->get();
+        return view('posts.show', compact('post','comments'));
     }
 }
