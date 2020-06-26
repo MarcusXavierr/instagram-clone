@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Instagram</title>
-
+    <link rel="icon" href="favicon.ico">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -79,6 +79,7 @@
 
         <main class="py-4">
             @yield('content')
+        
         </main>
     </div>
 </body>
